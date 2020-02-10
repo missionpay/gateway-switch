@@ -8,7 +8,6 @@ type Cart struct {
 	TotalPaid                      int
 	EncryptedCard                  string
 	IsBillingSameAsShippingAddress bool
-	GatewayID                      string
 	BillingAddress                 customer.Address // billing address on cart for recurring purposes
 	Items                          []Item
 }
@@ -43,14 +42,6 @@ func (cart *Cart) SetBillingSameAsShippingAddress(isSame bool) {
 
 func (cart *Cart) GetIsBillingSameAsShippingAddress() (isSame bool) {
 	return cart.IsBillingSameAsShippingAddress
-}
-
-func (cart *Cart) SetGatewayID(gatewayID string) {
-	cart.GatewayID = gatewayID
-}
-
-func (cart *Cart) GetGatewayID() string {
-	return cart.GatewayID
 }
 
 func (cart *Cart) AddItem(item Item) {

@@ -14,9 +14,6 @@ type Cart interface {
 	SetBillingSameAsShippingAddress(isSame bool)
 	GetIsBillingSameAsShippingAddress() (isSame bool)
 
-	SetGatewayID(gatewayID string)
-	GetGatewayID() string
-
 	AddItem(item customer.Item)
 	AddItems(items ...customer.Item)
 	UpdateItemQuantity(item customer.Item, quantity int)

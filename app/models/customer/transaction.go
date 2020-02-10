@@ -10,6 +10,7 @@ type Transaction struct {
 	Description   string
 	CreateDate    time.Time
 	ModifiedDate  time.Time
+	Gateway customer.Gateway
 	Cart          Cart
 }
 
@@ -21,8 +22,10 @@ func (trans *Transaction) GetDescription() (description string) {
 	return trans.Description
 }
 
-func SetGateway(gateway customer.Gateway) {
-
+func (trans *Transaction) SetGateway(gateway customer.Gateway) {
+	trans.Gateway = gateway
 }
 
-func GetGateway() (gateway customer.Gateway)
+func (trans *Transaction) GetGateway() (gateway customer.Gateway) {
+	return trans.Gateway
+}
