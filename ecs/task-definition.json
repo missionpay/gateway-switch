@@ -1,0 +1,35 @@
+{
+  "containerDefinitions": [
+    {
+      "memory": 512,
+      "portMappings": [
+        {
+          "containerPort": 80,
+          "protocol": "tcp"
+        }
+      ],
+      "ulimits": [
+        {
+          "name": "nofile",
+          "softLimit": 2048,
+          "hardLimit": 4096
+        }
+      ],
+      "environment": [],
+      "essential": true,
+      "name": "KMS_NAME-ENVIRONMENT",
+      "image": "IMAGE_NAME",
+      "cpu": 64,
+      "logConfiguration": {
+        "logDriver": "awslogs",
+        "options": {
+          "awslogs-group": "/ecs/KMS_NAME-ENVIRONMENT",
+          "awslogs-region": "us-east-1",
+          "awslogs-stream-prefix": "ecs"
+        }
+      }
+    }
+  ],
+  "family": "KMS_NAME-ENVIRONMENT",
+	"taskRoleArn": "arn:aws:iam::563280612930:role/ecsTaskExecutionRole"
+}
