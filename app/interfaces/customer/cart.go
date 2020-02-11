@@ -1,7 +1,5 @@
 package customer
 
-import "github.com/missionpay/app/models/customer"
-
 type Cart interface {
 	IsPaid() bool
 	GetCartID() string
@@ -14,11 +12,22 @@ type Cart interface {
 	SetBillingSameAsShippingAddress(isSame bool)
 	GetIsBillingSameAsShippingAddress() (isSame bool)
 
-	AddItem(item customer.Item)
-	AddItems(items ...customer.Item)
-	UpdateItemQuantity(item customer.Item, quantity int)
+	AddTax(tax int)
+	GetTax() (tax int)
+	AddShipping(shipping int)
+	GetShipping() (shipping int)
+	AddHandlingFee(handlingFee int)
+	GetHandlingFee() (handlingFee int)
+	AddShippingDiscount(shippingDiscount int)
+	GetShippingDiscount() (shippingDiscount int)
+	AddInsurance(insurance int)
+	GetInsurance() (insurance int)
+
+	AddItem(item Item)
+	AddItems(items ...Item)
+	UpdateItemQuantity(item Item, quantity int)
 	ClearAllItems()
-	GetItems() (items []customer.Item)
+	GetItems() (items []Item)
 	GetItemsTotalQuantity() (total int)
 	GetItemsTotalDue() (total int)
 }

@@ -4,6 +4,9 @@ type Transaction interface {
 	AddDescription(description string)
 	GetDescription() (description string)
 
-	SetGateway()
-	GetGateway()
+	AddInvoiceNumber(invoiceNumber string)
+	GetInvoiceNumber() (invoiceNumber string)
+
+	SetGateway(gateway Gateway)
+	GetGateway() (gateway Gateway)
 }

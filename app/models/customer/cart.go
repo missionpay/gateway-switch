@@ -1,14 +1,12 @@
 package customer
 
-import "github.com/missionpay/app/interfaces/customer"
-
 type Cart struct {
 	CartID                         string
 	TotalDue                       int
 	TotalPaid                      int
 	EncryptedCard                  string
 	IsBillingSameAsShippingAddress bool
-	BillingAddress                 customer.Address // billing address on cart for recurring purposes
+	BillingAddress                 Address // billing address on cart for recurring purposes
 	Items                          []Item
 }
 

@@ -1,8 +1,9 @@
 package customer
 
 import (
-	"github.com/missionpay/app/interfaces/customer"
 	"time"
+
+	"github.com/missionpay/gateway-switch/app/interfaces/customer"
 )
 
 type Transaction struct {
@@ -10,7 +11,7 @@ type Transaction struct {
 	Description   string
 	CreateDate    time.Time
 	ModifiedDate  time.Time
-	Gateway customer.Gateway
+	Gateway       customer.Gateway
 	Cart          Cart
 }
 

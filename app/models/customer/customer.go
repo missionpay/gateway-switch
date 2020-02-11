@@ -6,7 +6,7 @@ import (
 
 	"github.com/catmullet/dynamo"
 	"github.com/google/uuid"
-	"github.com/missionpay/app/interfaces/customer"
+	"github.com/missionpay/gateway-switch/app/interfaces/customer"
 )
 
 type Customer struct {
@@ -61,11 +61,11 @@ func (cust *Customer) GetEmail() (email string) {
 	return cust.Email
 }
 
-func (cust *Customer) SetShippingAddress(shippingAddress Address) {
+func (cust *Customer) SetShippingAddress(shippingAddress customer.Address) {
 	cust.ShippingAddress = shippingAddress
 }
 
-func (cust *Customer) GetShippingAddress() (shippingAddress Address) {
+func (cust *Customer) GetShippingAddress() (shippingAddress customer.Address) {
 	return cust.ShippingAddress
 }
 
